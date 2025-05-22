@@ -6,56 +6,241 @@
   --clr-muted: #666;
   --spacer: 1.25rem;
 }
-* { box-sizing: border-box; margin: 0; padding: 0; }
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: 'Inter', sans-serif;
   background: var(--clr-bg);
   color: var(--clr-text);
   line-height: 1.6;
 }
+
 .container {
   max-width: 800px;
   margin: auto;
   padding: var(--spacer);
 }
+
+/* Header Styles */
 .site-header {
   background: var(--clr-primary);
   color: white;
   text-align: center;
   padding: var(--spacer) 0;
 }
+
 .site-header .name {
   font-size: 2rem;
   font-weight: 700;
 }
-.site-header p { margin-top: 0.5rem; }
-.site-header a { color: white; text-decoration: none; }
+
+.site-header p {
+  margin-top: 0.5rem;
+}
+
+.site-header a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Section Headings */
 h2 {
   margin-top: var(--spacer);
   color: var(--clr-secondary);
   border-bottom: 2px solid var(--clr-secondary);
   padding-bottom: 0.5rem;
 }
+
+/* Common Section Styles */
+section {
+  margin-bottom: calc(var(--spacer) * 2);
+}
+
+/* Skills Section */
 #skills .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: var(--spacer);
   margin-top: var(--spacer);
 }
-.timeline .item { margin-top: var(--spacer); }
-.timeline .item h3 { color: var(--clr-primary); }
+
+/* Timeline Section */
+.timeline .item {
+  margin-top: var(--spacer);
+}
+
+.timeline .item h3 {
+  color: var(--clr-primary);
+}
+
 .timeline .item .period {
   display: block;
   font-size: 0.9rem;
   color: var(--clr-muted);
   margin-bottom: 0.5rem;
 }
+
+/* Common List Styles */
+ul {
+  list-style: none;
+  padding-left: 1.2em;
+  margin: 0;
+}
+
+li {
+  position: relative;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+li:before {
+  content: '';
+  position: absolute;
+  left: -1.2em;
+  top: 0.75em;
+  width: 4px;
+  height: 4px;
+  background-color: var(--clr-secondary);
+  border-radius: 50%;
+}
+
+/* Link Styles */
+a {
+  color: var(--clr-secondary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Tech Tags */
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 0.75rem 0;
+  padding-left: 0;
+}
+
+.tech-tags li {
+  background-color: #e9ecef;
+  border-radius: 1rem;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.85rem;
+  color: var(--clr-text);
+  display: inline-block;
+  margin: 0;
+  transition: background-color 0.2s ease;
+}
+
+.tech-tags li:hover {
+  background-color: #dee2e6;
+}
+
+.tech-tags li:before {
+  display: none;
+}
+
+/* Experience Section */
+#experience .experience-item {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin-bottom: var(--spacer);
+}
+
+#experience .experience-item .item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.5rem;
+}
+
+#experience .experience-item h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+#experience .experience-item .period {
+  font-size: 0.9rem;
+  color: var(--clr-muted);
+}
+
+#experience .experience-item .business {
+  font-size: 0.9rem;
+  color: var(--clr-muted);
+  margin-bottom: 0.2rem;
+}
+
+/* Industry Tags */
+#experience .experience-item .industry-tags {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.75rem 0;
+  font-size: 0.9rem;
+  color: var(--clr-muted);
+}
+
+#experience .experience-item .industry-tags li {
+  padding: 0;
+  margin: 0;
+}
+
+#experience .experience-item .industry-tags li:before {
+  display: none;
+}
+
+#experience .experience-item .industry-tags li:not(:last-child):after {
+  content: "·";
+  margin: 0 0.3rem;
+}
+
+#experience .experience-item ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+#experience .experience-item ul li {
+  position: relative;
+  padding-left: 1.2em;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+#experience .experience-item ul li:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.75em;
+  width: 4px;
+  height: 4px;
+  background-color: var(--clr-secondary);
+  border-radius: 50%;
+}
+
+/* Footer */
 .site-footer {
   text-align: center;
   padding: var(--spacer);
   font-size: 0.9rem;
   color: var(--clr-muted);
 }
+
+/* Media Queries */
 @media (max-width: 600px) {
-  .site-header .name { font-size: 1.5rem; }
+  .site-header .name {
+    font-size: 1.5rem;
+  }
 }
