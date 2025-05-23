@@ -264,3 +264,143 @@ a:hover {
     height: 1.25rem;
     fill: currentColor;
 }
+
+
+/* Print Styles */
+@media print {
+  /* Use white background and black text for clarity */
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  /* Remove header background and logos */
+  .site-header {
+    background: none !important;
+    color: #000 !important;
+    padding: 0 !important;
+  }
+
+  /* Make the name larger and prominent */
+  .site-header .name {
+    font-size: 2.5rem;
+    color: #000;
+  }
+
+  /* Remove decorative elements and shadows */
+  *, *::before, *::after {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* Expand container to full width and reset padding */
+  .container {
+    max-width: none !important;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Print: header name on one line, URL on the next */
+  .site-header .name-social {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;
+    margin-bottom: 0.5rem !important;
+    text-decoration: none;
+    color: #000 !important;
+  }
+  .site-header .name-social svg {
+    display: none !important;
+  }
+  .site-header .name-social:after {
+    content: "https://www.linkedin.com/in/aleksei-kutepov-6a683941/";
+    display: block;
+    font-size: 0.9rem;
+    color: #000;
+    margin-top: 0.2rem;
+  }
+  /* Force black links for print */
+  a, a:link, a:visited {
+    color: #000 !important;
+    text-decoration: none !important;
+  }
+
+  /* Simplify section headings */
+  h2 {
+    color: #000 !important;
+    border: none !important;
+    margin-top: 1rem !important;
+  }
+
+  /* Remove list bullets and pseudo-elements except for main content lists */
+  ul, ol {
+    list-style: none !important;
+    padding-left: 0 !important;
+  }
+  li::before {
+    content: none !important;
+  }
+
+  /* Prevent page breaks inside important blocks */
+  .experience-item,
+  .experience-item * {
+    page-break-inside: avoid !important;
+  }
+
+  /* Show link URLs in text */
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 0.85em;
+    color: #000;
+  }
+
+  /* Adjust spacing for print */
+  section {
+    margin-bottom: 1rem !important;
+  }
+  .tech-tags li, .industry-tags li {
+    page-break-inside: avoid;
+  }
+
+  /* Margin for pages */
+  @page {
+    margin: 1in;
+  }
+}
+  /* Keep Work Experience heading with its first item */
+  #experience h2 {
+    page-break-after: avoid !important;
+  }
+
+  /* Print: inline industry tags and block tech tags */
+  #experience .experience-item .industry-tags {
+    display: inline !important;
+    padding: 0 !important;
+    margin: 0 0 0.5rem 0 !important;
+  }
+  #experience .experience-item .industry-tags li {
+    display: inline !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: var(--clr-muted) !important;
+    font-size: 0.9rem !important;
+  }
+  #experience .experience-item .industry-tags li:not(:last-child)::after {
+    content: " · ";
+  }
+
+  #experience .experience-item .tech-tags {
+    display: block !important;
+    padding: 0 !important;
+    margin: 0 0 0.5rem 0 !important;
+  }
+  #experience .experience-item .tech-tags li {
+    display: inline !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #000 !important;
+    font-size: 0.9rem !important;
+  }
+  #experience .experience-item .tech-tags li:not(:last-child)::after {
+    content: " · ";
+  }
