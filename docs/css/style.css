@@ -46,6 +46,17 @@ body {
     font-weight: 700;
 }
 
+.site-header .name a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.site-header .name a:hover {
+    text-decoration: underline;
+    color: inherit;
+}
+
+
 .site-header p {
     margin-top: 0.5rem;
 }
@@ -89,6 +100,20 @@ section {
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: var(--spacer);
     margin-top: var(--spacer);
+}
+
+/* — Summary Toggle Styles — */
+#summary .summary-short {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+#summary details summary {
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+}
+#summary .summary-full {
+    margin-top: 0.5rem;
 }
 
 /* — Experience Section — */
@@ -258,7 +283,6 @@ section {
     color: var(--clr-secondary);
 }
 
-/* — Other Sections — */
 
 /* — Footer Styles — */
 .site-footer {
@@ -279,11 +303,6 @@ a:hover {
 }
 
 /* — Responsive Styles — */
-@media (max-width: 600px) {
-    .site-header .name {
-        font-size: 1.5rem;
-    }
-}
 
 
 /* — Print Styles — */
